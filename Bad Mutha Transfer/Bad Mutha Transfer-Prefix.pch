@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Bad Mutha Transfer' target in the 'Bad Mutha Transfer' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
