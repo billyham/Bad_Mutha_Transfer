@@ -75,6 +75,15 @@ int onOffState;
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     
+    //set user defaults
+    NSDictionary* usbPathDefault = [NSDictionary dictionaryWithObject:@"/dev/cu.usbserial-A600494p" forKey:@"usbPathDefault"];
+    
+    NSDictionary* appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 usbPathDefault, @"usbPathDefault",
+                                 nil];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    
     
     QTCaptureDevice *theDefaultMuxedDevice; 
     QTCaptureDeviceInput *theDeviceInput; 
@@ -248,7 +257,10 @@ int onOffState;
     self.timerDelay.stringValue = @"0.0";
     self.frameCounterText.stringValue = @"0";
     self.totalFrames.stringValue = @"10";
-    self.usbPath.stringValue = @"/dev/cu.usbserial-A600494p";
+    
+    //get default usbpath from user defaults
+//    self.usbPath.stringValue = @"/dev/cu.usbserial-A600494p";
+    self.usbPath.stringValue = [[[NSUserDefaults standardUserDefaults] objectForKey:@"usbPathDefault"] objectForKey:@"usbPathDefault"];
     
     
     //___________________serial comm setup_____________****************
@@ -279,6 +291,10 @@ int onOffState;
 	readThreadRunning = FALSE;
     
     NSString *shozbot = [self openSerialPort:self.usbPath.stringValue baud:9600];
+    
+    //save to defaults
+    NSDictionary* newUsbDic = [NSDictionary dictionaryWithObject:self.usbPath.stringValue forKey:@"usbPathDefault"];
+    [[NSUserDefaults standardUserDefaults] setObject:newUsbDic forKey:@"usbPathDefault"];
     
     if (shozbot) {
         NSLog(@"this is shozbot: %@  this is serialFileDescriptor: %u", shozbot, serialFileDescriptor);
