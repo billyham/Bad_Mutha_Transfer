@@ -18,6 +18,9 @@
 		7CB8E3A015BC98B000B58C7A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB8E37D15BC98B000B58C7A /* Cocoa.framework */; };
 		7CB8E3A815BC98B000B58C7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8E3A615BC98B000B58C7A /* InfoPlist.strings */; };
 		7CB8E3AB15BC98B000B58C7A /* Bad_Mutha_TransferTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8E3AA15BC98B000B58C7A /* Bad_Mutha_TransferTests.m */; };
+		7CB8E3B515BC98BA00B58C7A /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB8E3B415BC98BA00B58C7A /* QTKit.framework */; };
+		7CB8E3B715BC9E5200B58C7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB8E3B615BC9E5200B58C7A /* QuartzCore.framework */; };
+		7CBF8F7815EC514C00637F95 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7CBF8F7715EC514C00637F95 /* icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,21 +39,24 @@
 		7CB8E38015BC98B000B58C7A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		7CB8E38115BC98B000B58C7A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7CB8E38215BC98B000B58C7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7CB8E38515BC98B000B58C7A /* Bad Mutha Transfer-Info.plist */ = {isa = PBXFileReference; path = "Bad Mutha Transfer-Info.plist"; sourceTree = "<group>"; };
+		7CB8E38515BC98B000B58C7A /* Bad Mutha Transfer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bad Mutha Transfer-Info.plist"; sourceTree = "<group>"; };
 		7CB8E38715BC98B000B58C7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7CB8E38915BC98B000B58C7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7CB8E38B15BC98B000B58C7A /* Bad Mutha Transfer-Prefix.pch */ = {isa = PBXFileReference; path = "Bad Mutha Transfer-Prefix.pch"; sourceTree = "<group>"; };
+		7CB8E38B15BC98B000B58C7A /* Bad Mutha Transfer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bad Mutha Transfer-Prefix.pch"; sourceTree = "<group>"; };
 		7CB8E38D15BC98B000B58C7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		7CB8E38F15BC98B000B58C7A /* HAMDocument.h */ = {isa = PBXFileReference; path = HAMDocument.h; sourceTree = "<group>"; };
+		7CB8E38F15BC98B000B58C7A /* HAMDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAMDocument.h; sourceTree = "<group>"; };
 		7CB8E39015BC98B000B58C7A /* HAMDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAMDocument.m; sourceTree = "<group>"; };
 		7CB8E39315BC98B000B58C7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HAMDocument.xib; sourceTree = "<group>"; };
 		7CB8E39615BC98B000B58C7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7CB8E39D15BC98B000B58C7A /* Bad Mutha TransferTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bad Mutha TransferTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB8E39E15BC98B000B58C7A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		7CB8E3A515BC98B000B58C7A /* Bad Mutha TransferTests-Info.plist */ = {isa = PBXFileReference; path = "Bad Mutha TransferTests-Info.plist"; sourceTree = "<group>"; };
+		7CB8E3A515BC98B000B58C7A /* Bad Mutha TransferTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bad Mutha TransferTests-Info.plist"; sourceTree = "<group>"; };
 		7CB8E3A715BC98B000B58C7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7CB8E3A915BC98B000B58C7A /* Bad_Mutha_TransferTests.h */ = {isa = PBXFileReference; path = Bad_Mutha_TransferTests.h; sourceTree = "<group>"; };
+		7CB8E3A915BC98B000B58C7A /* Bad_Mutha_TransferTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bad_Mutha_TransferTests.h; sourceTree = "<group>"; };
 		7CB8E3AA15BC98B000B58C7A /* Bad_Mutha_TransferTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bad_Mutha_TransferTests.m; sourceTree = "<group>"; };
+		7CB8E3B415BC98BA00B58C7A /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+		7CB8E3B615BC9E5200B58C7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7CBF8F7715EC514C00637F95 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CB8E3B715BC9E5200B58C7A /* QuartzCore.framework in Frameworks */,
+				7CB8E3B515BC98BA00B58C7A /* QTKit.framework in Frameworks */,
 				7CB8E37E15BC98B000B58C7A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +85,7 @@
 		7CB8E36E15BC98AF00B58C7A = {
 			isa = PBXGroup;
 			children = (
+				7CBF8F7715EC514C00637F95 /* icon.icns */,
 				7CB8E38315BC98B000B58C7A /* Bad Mutha Transfer */,
 				7CB8E3A315BC98B000B58C7A /* Bad Mutha TransferTests */,
 				7CB8E37C15BC98B000B58C7A /* Frameworks */,
@@ -96,6 +105,8 @@
 		7CB8E37C15BC98B000B58C7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CB8E3B615BC9E5200B58C7A /* QuartzCore.framework */,
+				7CB8E3B415BC98BA00B58C7A /* QTKit.framework */,
 				7CB8E37D15BC98B000B58C7A /* Cocoa.framework */,
 				7CB8E39E15BC98B000B58C7A /* SenTestingKit.framework */,
 				7CB8E37F15BC98B000B58C7A /* Other Frameworks */,
@@ -231,6 +242,7 @@
 				7CB8E38E15BC98B000B58C7A /* Credits.rtf in Resources */,
 				7CB8E39415BC98B000B58C7A /* HAMDocument.xib in Resources */,
 				7CB8E39715BC98B000B58C7A /* MainMenu.xib in Resources */,
+				7CBF8F7815EC514C00637F95 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +392,7 @@
 		7CB8E3AF15BC98B000B58C7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bad Mutha Transfer/Bad Mutha Transfer-Prefix.pch";
 				INFOPLIST_FILE = "Bad Mutha Transfer/Bad Mutha Transfer-Info.plist";
@@ -391,6 +404,7 @@
 		7CB8E3B015BC98B000B58C7A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bad Mutha Transfer/Bad Mutha Transfer-Prefix.pch";
 				INFOPLIST_FILE = "Bad Mutha Transfer/Bad Mutha Transfer-Info.plist";
@@ -446,6 +460,7 @@
 				7CB8E3B015BC98B000B58C7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CB8E3B115BC98B000B58C7A /* Build configuration list for PBXNativeTarget "Bad Mutha TransferTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +469,7 @@
 				7CB8E3B315BC98B000B58C7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
