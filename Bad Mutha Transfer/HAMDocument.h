@@ -44,6 +44,10 @@
     //onOff button
     IBOutlet NSMatrix* onOffToggle;
     
+    //invert color
+    NSMutableDictionary* dictionaryOfFilters;
+    IBOutlet NSButton* invertColorButton;
+    
     
     //serial comm
     int serialFileDescriptor; // file handle to the serial port
@@ -75,6 +79,10 @@
 @property (retain, nonatomic) IBOutlet NSTextField* usbPath;
 
 @property (retain, nonatomic) IBOutlet NSMatrix* onOffToggle;
+
+@property (retain, nonatomic) NSMutableDictionary* dictionaryOfFilters;
+@property (retain, nonatomic) IBOutlet NSButton* invertColorButton;
+
 
 
 -(IBAction)resetTheUSBToArduinoConnection:(id)sender;

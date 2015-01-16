@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
-        <plugIn identifier="com.apple.QTKitIBPlugin" version="6245"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.QTKitIBPlugin" version="6254"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HAMDocument">
             <connections>
                 <outlet property="frameCounterText" destination="100059" id="100066"/>
+                <outlet property="invertColorButton" destination="Uu9-C6-ENY" id="ZTq-5c-WeI"/>
                 <outlet property="mCaptureView" destination="100021" id="100022"/>
                 <outlet property="mMovieView" destination="100023" id="100027"/>
                 <outlet property="onOffToggle" destination="100071" id="100081"/>
@@ -123,10 +124,10 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="100055">
-                        <rect key="frame" x="996" y="429" width="121" height="17"/>
+                        <rect key="frame" x="996" y="421" width="121" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timer Duration" id="100056">
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -198,10 +199,10 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="100084">
-                        <rect key="frame" x="996" y="370" width="121" height="17"/>
+                        <rect key="frame" x="996" y="362" width="121" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Delay" id="100085">
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -235,6 +236,23 @@
                             <action selector="resetTheUSBToArduinoConnection:" target="-2" id="4Jj-Nr-shp"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" id="Uu9-C6-ENY">
+                        <rect key="frame" x="999" y="235" width="102" height="41"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="Invert Color" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0lM-vf-nXP">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="cn5-E8-2rP">
+                        <rect key="frame" x="997" y="276" width="128" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color Negative Film" id="2Xf-Pe-YgF">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <connections>

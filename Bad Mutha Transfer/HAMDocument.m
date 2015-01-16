@@ -11,6 +11,7 @@
 
 @interface HAMDocument()
 
+
 -(void)triggerAction;
 -(void)continueTransfer;
 
@@ -42,6 +43,8 @@
 
 @synthesize onOffToggle;
 
+@synthesize dictionaryOfFilters;
+@synthesize invertColorButton;
 
 int frameCounter;
 int onOffState;
@@ -281,6 +284,10 @@ int onOffState;
     //prompt user to enter the initial destination
     [self performSelector:@selector(selectDestination:) withObject:nil afterDelay:1.0];
     
+    
+    //build dictionary of available image filters
+    [self buildDictionaryOfFilters];
+    
 
 }
 
@@ -508,17 +515,36 @@ int onOffState;
 //        NSString* destination = [NSString stringWithFormat:@"%@/%@%u.png", [destinationUrl path], destinationName, frameCounter];
 //        
 //        [data writeToFile: destination atomically: NO];
-//        
+//
+        
+        //declare to reference in if statement
+        NSBitmapImageRep* imgRep;
         
         
-        
-        
-    
+        //______read invertColor button and act accordingly
+        if (self.invertColorButton.state == 1){
+            
+            //____________________invert image color
+            //http://stackoverflow.com/questions/2137744/draw-standard-nsimage-inverted-white-instead-of-black
+            //
+            CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
+            [filter setDefaults];
+            [filter setValue:[imageRep CIImage] forKey:@"inputImage"];
+            CIImage* outputImage = [filter valueForKey:@"outputImage"];
+            
+            //____this draws to screen, but is it necessary otherwise???
+            //        [outputImage drawAtPoint:NSZeroPoint fromRect:NSRectFromCGRect([outputImage extent]) operation:NSCompositeSourceOver fraction:1.0];
+            
+            imgRep = [[[NSBitmapImageRep alloc] initWithCIImage:outputImage] autorelease];
+
+        }else{
+            
+            imgRep = [[[NSBitmapImageRep alloc] initWithCIImage:[imageRep CIImage]] autorelease];
+            
+        }
         
         
         //____________________save individual files to disk
-        
-        NSBitmapImageRep *imgRep = [[[NSBitmapImageRep alloc] initWithCIImage:[imageRep CIImage]] autorelease];
 
         
         //______THIS WORKS BUT LEAVES THE IMAGE AT ITS RAW SIZE AND WRONG ASPECT RATIO
@@ -584,6 +610,45 @@ int onOffState;
     
 }
 
+
+#pragma mark - CIFilters
+
+-(void)buildDictionaryOfFilters{
+    
+    self.dictionaryOfFilters = [NSMutableDictionary dictionary];
+    
+    NSMutableArray *filterNames = [NSMutableArray array];
+    [filterNames addObjectsFromArray:
+     [CIFilter filterNamesInCategory:kCICategoryColorAdjustment]];
+    [filterNames addObjectsFromArray:
+     [CIFilter filterNamesInCategory:kCICategoryColorEffect]];
+    self.dictionaryOfFilters[@"Color"] = [self buildFilterDictionary: filterNames];
+    
+//    [filterNames removeAllObjects];
+//    [filterNames addObjectsFromArray:
+//     [CIFilter filterNamesInCategory:kCICategorySharpen]];
+//    [filterNames addObjectsFromArray:
+//     [CIFilter filterNamesInCategory:kCICategoryBlur]];
+//    filtersByCategory[@"Focus"] = [self buildFilterDictionary: filterNames];
+    
+}
+
+
+- (NSMutableDictionary *)buildFilterDictionary:(NSArray *)filterClassNames  // 1
+{
+    NSMutableDictionary *filters = [NSMutableDictionary dictionary];
+    for (NSString *className in filterClassNames) {                         // 2
+        CIFilter *filter = [CIFilter filterWithName:className];             // 3
+        
+        if (filter) {
+            filters[className] = [filter attributes];                       // 4
+            NSLog(@"This is a color filter: %@", className);
+        } else {
+            NSLog(@"could not create '%@' filter", className);
+        }
+    }
+    return filters;
+}
 
 
 #pragma mark - Preview movie

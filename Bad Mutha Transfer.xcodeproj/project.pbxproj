@@ -204,7 +204,7 @@
 			name = "Bad Mutha TransferTests";
 			productName = "Bad Mutha TransferTests";
 			productReference = 7CB8E39D15BC98B000B58C7A /* Bad Mutha TransferTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -212,6 +212,7 @@
 		7CB8E37015BC98AF00B58C7A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = nwfilm;
 			};
