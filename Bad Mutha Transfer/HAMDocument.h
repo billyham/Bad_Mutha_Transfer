@@ -48,6 +48,9 @@
     NSMutableDictionary* dictionaryOfFilters;
     IBOutlet NSButton* invertColorButton;
     
+    //gamma slider
+    NSNumber* gammaValue;
+    
     
     //serial comm
     int serialFileDescriptor; // file handle to the serial port
@@ -82,6 +85,8 @@
 
 @property (retain, nonatomic) NSMutableDictionary* dictionaryOfFilters;
 @property (retain, nonatomic) IBOutlet NSButton* invertColorButton;
+
+@property (retain, nonatomic) NSNumber* gammaValue;
 
 
 

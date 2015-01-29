@@ -46,6 +46,8 @@
 @synthesize dictionaryOfFilters;
 @synthesize invertColorButton;
 
+@synthesize gammaValue;
+
 int frameCounter;
 int onOffState;
 
@@ -77,6 +79,9 @@ int onOffState;
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
+    
+    //set gamma
+    self.gammaValue = [NSNumber numberWithFloat:0.75];
     
     //set user defaults
     NSDictionary* usbPathDefault = [NSDictionary dictionaryWithObject:@"/dev/cu.usbserial-A600494p" forKey:@"usbPathDefault"];
@@ -521,6 +526,26 @@ int onOffState;
         NSBitmapImageRep* imgRep;
         
         
+        NSLog(@"this is the current gamma: %@", self.gammaValue);
+        
+        //_______read gamma slider and act accordingly  (default value is .75)
+        CIFilter* gammaFilter = [CIFilter filterWithName:@"CIGammaAdjust"];
+        [gammaFilter setValue:[imageRep CIImage] forKey:@"inputImage"];
+        [gammaFilter setValue:[NSNumber numberWithFloat:[self.gammaValue floatValue]] forKey:@"inputPower"];
+        CIImage* gammaAdjustedImage = [gammaFilter valueForKey:@"outputImage"];
+        
+        
+        //NO! this doesnt work
+        //______Resized CIImage
+//        CGAffineTransform sizeTransform = CGAffineTransformMakeTranslation(0.0,1080.f);
+//        sizeTransform = CGAffineTransformScale(sizeTransform, 1.5, 1.0);
+//        CIImage *sizeAdjustedImage = [gammaAdjustedImage imageByApplyingTransform:sizeTransform];
+//        
+//        
+        
+        
+        
+        
         //______read invertColor button and act accordingly
         if (self.invertColorButton.state == 1){
             
@@ -529,19 +554,22 @@ int onOffState;
             //
             CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
             [filter setDefaults];
-            [filter setValue:[imageRep CIImage] forKey:@"inputImage"];
+            [filter setValue:gammaAdjustedImage forKey:@"inputImage"];
             CIImage* outputImage = [filter valueForKey:@"outputImage"];
             
-            //____this draws to screen, but is it necessary otherwise???
+            //____this draws to screen, which we don't want. At least not as it is here.
             //        [outputImage drawAtPoint:NSZeroPoint fromRect:NSRectFromCGRect([outputImage extent]) operation:NSCompositeSourceOver fraction:1.0];
             
             imgRep = [[[NSBitmapImageRep alloc] initWithCIImage:outputImage] autorelease];
 
         }else{
             
-            imgRep = [[[NSBitmapImageRep alloc] initWithCIImage:[imageRep CIImage]] autorelease];
+            imgRep = [[[NSBitmapImageRep alloc] initWithCIImage:gammaAdjustedImage] autorelease];
             
         }
+        
+        
+        
         
         
         //____________________save individual files to disk

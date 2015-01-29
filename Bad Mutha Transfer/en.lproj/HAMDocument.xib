@@ -39,7 +39,7 @@
                     <qtMovieView id="100023">
                         <rect key="frame" x="-1" y="102" width="977" height="728"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="fillColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </qtMovieView>
                     <button verticalHuggingPriority="750" id="100024">
                         <rect key="frame" x="75" y="21" width="126" height="32"/>
@@ -253,6 +253,54 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <slider verticalHuggingPriority="750" id="eds-YB-Zxg">
+                        <rect key="frame" x="996" y="165" width="107" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <sliderCell key="cell" state="on" alignment="left" maxValue="3" doubleValue="0.75" tickMarkPosition="above" sliderType="linear" id="Ngm-27-vM7">
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.gammaValue" id="Qgc-V6-DU7"/>
+                            </connections>
+                        </sliderCell>
+                    </slider>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1qF-Qv-O7m">
+                        <rect key="frame" x="992" y="185" width="128" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Gamma:" id="DaE-p2-bKK">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="QGf-mx-tgA">
+                        <rect key="frame" x="1007" y="145" width="42" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title=".75" id="Tqt-Vq-nEi">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="e00-it-ACw">
+                        <rect key="frame" x="1078" y="145" width="42" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="3" id="zyY-Uz-C34">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="EUL-Od-yU5">
+                        <rect key="frame" x="1039" y="185" width="57" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Value" id="4ji-on-wyo">
+                            <font key="font" metaFont="smallSystemBold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.gammaValue" id="qv1-51-66c"/>
+                        </connections>
+                    </textField>
                 </subviews>
             </view>
             <connections>
@@ -260,5 +308,6 @@
             </connections>
         </window>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <userDefaultsController representsSharedInstance="YES" id="rmx-JS-Ng4"/>
     </objects>
 </document>
